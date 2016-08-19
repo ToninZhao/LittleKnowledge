@@ -11,26 +11,45 @@ import UIKit
 class BookController: UIViewController {
 
     @IBOutlet weak var bookTableView: UITableView!
+    var bookResults: BookResults?
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        bookTableView.registerNib(UINib(nibName: "CommonCell", bundle: nil), forCellReuseIdentifier: "CommonCell")
+        bookTableView.dataSource = self
+        bookTableView.delegate = self
+        
+        GetDataFromDouBan.getData("https://api.douban.com/v2/book/search", type: "books", keyword: "韩寒") { (data) -> Void in
+            self.bookResults = BookResults(dicts: data)
+            self.bookTableView.reloadData()
+        }
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        NSNotificationCenter.defaultCenter().postNotificationName("currentPageChanged", object: 2)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+}
+extension BookController: UITableViewDataSource {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let result = bookResults {
+            return result.books.count
+        }
+        return 0
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let book = bookResults!.books[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier("CommonCell", forIndexPath: indexPath) as! CommonCell
+        cell.coverImageView.sd_setImageWithURL(NSURL(string: book.imageURL))
+        cell.titleLabel.text = book.title
+        return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+}
+extension BookController: UITableViewDelegate {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 150
     }
-    */
-
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 }

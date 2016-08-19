@@ -18,41 +18,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XT9-DG-MQI">
+                            <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XT9-DG-MQI">
                                 <rect key="frame" x="0.0" y="64" width="200" height="40"/>
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="sZq-U9-Mrp"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="电影">
                                     <color key="titleColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="changeCurrentPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p2e-he-R87"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" tag="1010" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6H-hF-Ud9">
+                            <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6H-hF-Ud9">
                                 <rect key="frame" x="200" y="64" width="200" height="40"/>
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="音乐">
                                     <color key="titleColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="changeCurrentPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WSx-3s-5Ab"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" tag="1020" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPo-rj-Xft">
+                            <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPo-rj-Xft">
                                 <rect key="frame" x="400" y="64" width="200" height="40"/>
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="书籍">
                                     <color key="titleColor" red="0.20392156859999999" green="0.56078431370000004" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="changeCurrentPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A72-Pt-tjd"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYS-gH-E7Q">
-                                <rect key="frame" x="0.0" y="104" width="600" height="0.0"/>
-                                <color key="backgroundColor" red="0.95686274510000002" green="0.25490196079999999" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="104" width="600" height="1"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" id="fOg-0y-geU"/>
+                                    <constraint firstAttribute="height" constant="1" id="fOg-0y-geU"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yc9-60-TcY">
-                                <rect key="frame" x="0.0" y="104" width="600" height="496"/>
+                                <rect key="frame" x="0.0" y="105" width="600" height="495"/>
                                 <connections>
-                                    <segue destination="HzC-mt-Hzn" kind="embed" id="8Rv-wo-ZW4"/>
+                                    <segue destination="o4p-6v-shV" kind="embed" id="ptP-yE-uZi"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -79,10 +87,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fwL-pX-hXU"/>
+                    <connections>
+                        <outlet property="sliderView" destination="xYS-gH-E7Q" id="tbD-9R-PP3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="546" y="-109"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="6jN-Se-2eX">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="o4p-6v-shV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bm6-Ik-Lw7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="546" y="579"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nt0-Zf-eRA">
@@ -101,24 +120,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yr1-Mq-XW4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="546" y="-812"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Qnu-pI-pAG">
-            <objects>
-                <viewController id="HzC-mt-Hzn" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yyc-JD-EEJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="cWo-X6-cmi"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Wue-cy-T7P">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="496"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HRb-BH-jwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="546" y="537"/>
         </scene>
         <!--Book Controller-->
         <scene sceneID="ke5-Ui-LMu">
@@ -189,7 +190,7 @@
         <!--Movie Controller-->
         <scene sceneID="e8U-7a-lAg">
             <objects>
-                <viewController storyboardIdentifier="MovieControllerID" id="ED8-a9-cBY" customClass="MovieController" customModule="TestPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieController" id="ED8-a9-cBY" customClass="MovieController" customModule="TestPageViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j4v-3w-FJa"/>
                         <viewControllerLayoutGuide type="bottom" id="uUL-He-Pdo"/>

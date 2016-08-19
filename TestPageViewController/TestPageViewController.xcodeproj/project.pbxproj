@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D1812F01D66A8DE00D5FDAE /* CommonDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1812EF1D66A8DE00D5FDAE /* CommonDataModel.swift */; };
+		4D1812F21D66A9F600D5FDAE /* MovieResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1812F11D66A9F600D5FDAE /* MovieResults.swift */; };
+		4D1812F41D66AA0200D5FDAE /* MusicResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1812F31D66AA0200D5FDAE /* MusicResults.swift */; };
+		4D1812F61D66AA0D00D5FDAE /* BookResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1812F51D66AA0D00D5FDAE /* BookResults.swift */; };
 		4D4F199A1D65917400D9C919 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F19991D65917400D9C919 /* PageController.swift */; };
 		4D4F199C1D65921700D9C919 /* MovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F199B1D65921700D9C919 /* MovieController.swift */; };
 		4D6CEA941D654F2600DA4383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6CEA931D654F2600DA4383 /* AppDelegate.swift */; };
@@ -54,6 +58,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4D1812EF1D66A8DE00D5FDAE /* CommonDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDataModel.swift; sourceTree = "<group>"; };
+		4D1812F11D66A9F600D5FDAE /* MovieResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieResults.swift; sourceTree = "<group>"; };
+		4D1812F31D66AA0200D5FDAE /* MusicResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicResults.swift; sourceTree = "<group>"; };
+		4D1812F51D66AA0D00D5FDAE /* BookResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookResults.swift; sourceTree = "<group>"; };
 		4D4F19991D65917400D9C919 /* PageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
 		4D4F199B1D65921700D9C919 /* MovieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieController.swift; sourceTree = "<group>"; };
 		4D6CEA901D654F2600DA4383 /* TestPageViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestPageViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +176,10 @@
 		4D6CEACF1D65665F00DA4383 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				4D1812EF1D66A8DE00D5FDAE /* CommonDataModel.swift */,
+				4D1812F11D66A9F600D5FDAE /* MovieResults.swift */,
+				4D1812F31D66AA0200D5FDAE /* MusicResults.swift */,
+				4D1812F51D66AA0D00D5FDAE /* BookResults.swift */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -412,10 +424,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D1812F61D66AA0D00D5FDAE /* BookResults.swift in Sources */,
 				4D4F199A1D65917400D9C919 /* PageController.swift in Sources */,
 				4D6CEAC81D6562AB00DA4383 /* BookController.swift in Sources */,
 				4D6CEAD61D657A2C00DA4383 /* GetDataFromDouBan.swift in Sources */,
 				4D6CEACB1D65631D00DA4383 /* CommonCell.swift in Sources */,
+				4D1812F41D66AA0200D5FDAE /* MusicResults.swift in Sources */,
+				4D1812F21D66A9F600D5FDAE /* MovieResults.swift in Sources */,
+				4D1812F01D66A8DE00D5FDAE /* CommonDataModel.swift in Sources */,
 				4D6CEAC61D65629D00DA4383 /* MusicController.swift in Sources */,
 				4D4F199C1D65921700D9C919 /* MovieController.swift in Sources */,
 				4D6CEA941D654F2600DA4383 /* AppDelegate.swift in Sources */,
